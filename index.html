@@ -1,4 +1,5 @@
 <html>
+<!-- <h1>Hi Baby, I love you!</h1> -->
 <head>
 <!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -18,9 +19,39 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+<style>
+body{
+  background-color: rgb(0, 52, 102);
+  text-align: center;
+}
+#bigCircle{
+  background-color: rgb(27, 27, 27);
+  height: 50vw;
+  width: 50vw;
+  border-radius: 50%;
+  display: inline-block;
+}
+</style>
 <body>
-<h1>Hi Baby, I love you!</h1>
+<div class="container">
+<div id="bigCircle">
+<div class="row">
+<div class="col">
+<img class="img-responsive" src="greenCircle.png" alt="Green Circle">
+<img class="img-responsive" src="redCircle.png" alt="Green Circle">
+</div>
+<div class="col">
+<img class="img-responsive" src="yellowCircle.png" alt="Green Circle">
+<img class="img-responsive" src="blueCircle.png" alt="Green Circle">
+</div>
+</div>
+</div>
+</div>
 <script>
+var sequence = [];
+for(let i = 0; i < 20; i++){
+sequence.push(Math.floor(Math.random() * (4 - 1 + 1)) + 1);
+}
 </script>
 </body>
 </html>
