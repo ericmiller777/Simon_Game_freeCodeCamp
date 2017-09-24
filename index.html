@@ -27,28 +27,50 @@ body{
 #bigCircle{
   text-align: center;
   background-color: rgb(27, 27, 27);
-  height: 50vw;
-  width: 50vw;
+  height: 35vw;
+  width: 35vw;
   border-radius: 50%;
   display: inline-block;
 }
 button{
-  text-align: center;
-  height: 15vh;
-  width: 15vw;
+    width: 10vw;
+    height: 12vw;
 }
+#buttons{
+  margin: 11.777%;
+}
+#blue{
+  border-bottom-right-radius: 100%;
+}
+#green{
+  border-top-left-radius: 100%;
+  margin-right: 17%;
+  margin-bottom: 10%;
+}
+#yellow{
+  border-bottom-left-radius: 100%;
+  margin-right: 17%;
+}
+#red{
+  border-top-right-radius: 100%;
+  margin-bottom: 10%;
+}
+
 </style>
 <body>
 <div class="container">
 <div id="bigCircle">
-<div id="buttons" class="row text-center">
-<div class="col">
-<button class="btn btn-sq-lg btn-primary"></button>
-<button class="btn btn-sq-lg btn-primary"></button>
+<div id="buttons" class="row">
+<div class="col col-center">
+<button id="green" class="btn btn-sq-lg btn-primary"></button>
+<button id="red" class="btn btn-sq-lg btn-primary"></button>
 </div>
-<div class="col">
-<button class="btn btn-sq-lg btn-primary"></button>
-<button class="btn btn-sq-lg btn-primary"></button>
+<div class="col col-center">
+
+</div>
+<div class="col col-center;">
+<button id="yellow" class="btn btn-sq-lg btn-primary"></button>
+<button id="blue" class="btn btn-sq-lg btn-primary"></button>
 </div>
 </div>
 </div>
