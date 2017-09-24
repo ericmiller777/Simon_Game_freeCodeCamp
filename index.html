@@ -15,6 +15,8 @@
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 
+<link href="https://fonts.googleapis.com/css?family=Rubik:900" rel="stylesheet">
+
 <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,33 +35,41 @@ body{
   display: inline-block;
 }
 button{
-    width: 14vw;
-    height: 17vw;
+    width: 20vw;
+    height: 20vw;
 }
 #buttons{
-  margin: 11.777%;
+  margin-top: 10%;
 }
 #blue{
   border-bottom-right-radius: 100%;
+  background-color: blue;
 }
 #green{
   border-top-left-radius: 100%;
-  margin-right: 14%;
-  margin-bottom: 10%;
+  margin-bottom: .7%;
+  background-color: green;
 }
 #yellow{
   border-bottom-left-radius: 100%;
-  margin-right: 14%;
+  background-color: yellow;
 }
 #red{
   border-top-right-radius: 100%;
-  margin-bottom: 10%;
+  margin-bottom: .7%;
+  background-color: red;
 }
 #centerCircle{
-  background-color: grey;
+  background-color: rgb(27, 27, 27);
+  padding-top: 2vw;;
   border-radius: 50%;
-  height: 20vw;
-  width: 20vw;
+  height: 21vw;
+  width: 21vw;
+}
+h2{
+  color:red;
+  font-size: 3vw;
+  font-family: Rubik;
 }
 </style>
 <body>
@@ -77,7 +87,7 @@ button{
 </div>
 </div>
 <div id="centerCircle">
-<h2>test</h2>
+<h2>Simon</h2>
 </div>
 </div>
 <script>
@@ -89,6 +99,9 @@ jQuery.fn.center = function () {
                                                 $(window).scrollLeft()) + "px");
     return this;
 }
+window.onresize = function(event) {
+  $("#centerCircle").center();
+};
 $("#centerCircle").center();
 var sequence = [];
 for(let i = 0; i < 20; i++){
