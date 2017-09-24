@@ -80,20 +80,20 @@ h2{
 <button id="green" class="btn btn-sq-lg btn-primary"></button>
 <button id="red" class="btn btn-sq-lg btn-primary"></button>
 </div>
+</div>
+<div id="centerCircle">
+<h2>Simon</h2>
+</div>
 <div class="col col-center;">
 <button id="yellow" class="btn btn-sq-lg btn-primary"></button>
 <button id="blue" class="btn btn-sq-lg btn-primary"></button>
 </div>
 </div>
 </div>
-<div id="centerCircle">
-<h2>Simon</h2>
-</div>
-</div>
 <script>
-if(window.innerHeight > window.innerWidth){
-    alert("Please use Landscape!");
-};
+//if(window.innerHeight > window.innerWidth){
+    //alert("Please use Landscape!");
+//};
 jQuery.fn.center = function () {
     this.css("position","absolute");
     this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + 
@@ -102,10 +102,10 @@ jQuery.fn.center = function () {
                                                 $(window).scrollLeft()) + "px");
     return this;
 }
-window.onresize = function(event) {
-  $("#centerCircle").center();
-};
-$("#centerCircle").center();
+//window.onresize = function(event) {
+  //$("#centerCircle").center();
+//};
+//$("#centerCircle").center();
 var sequence = [];
 for(let i = 0; i < 20; i++){
 sequence.push(Math.floor(Math.random() * (4 - 1 + 1)) + 1);
