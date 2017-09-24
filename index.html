@@ -25,41 +25,37 @@ body{
   text-align: center;
 }
 #bigCircle{
+  text-align: center;
   background-color: rgb(27, 27, 27);
   height: 50vw;
   width: 50vw;
   border-radius: 50%;
   display: inline-block;
 }
+button{
+  text-align: center;
+  height: 15vh;
+  width: 15vw;
+}
 </style>
 <body>
 <div class="container">
 <div id="bigCircle">
-<div class="row">
+<div id="buttons" class="row text-center">
 <div class="col">
-<div>
-<img class="img-responsive" src="greenCircle.png" alt="Green Circle" style="float: left">
-</div>
-</div>
-<div class="col">
-<div>
-<img class="img-responsive" src="redCircle.png" alt="Green Circle" style="float: right">
-</div>
+<button class="btn btn-sq-lg btn-primary"></button>
+<button class="btn btn-sq-lg btn-primary"></button>
 </div>
 <div class="col">
-<img class="img-responsive" src="yellowCircle.png" alt="Green Circle" style="float: left">
-</div>
-</div>
-<div class="col">
-<div>
-<img class="img-responsive" src="blueCircle.png" alt="Green Circle" style="float: right">
-</div>
-</div>
+<button class="btn btn-sq-lg btn-primary"></button>
+<button class="btn btn-sq-lg btn-primary"></button>
 </div>
 </div>
 </div>
 </div>
 <script>
+var bigHeight = $("#bigCircle").height();
+$("#buttons").height() = bigHeight/2;
 var sequence = [];
 for(let i = 0; i < 20; i++){
 sequence.push(Math.floor(Math.random() * (4 - 1 + 1)) + 1);
