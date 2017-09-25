@@ -85,6 +85,7 @@ h2{
   width: 4vw;
   margin-left: 17%;
   float:left;
+  font-size: 3vw;
 }
 #registeredTrademark{
   color: red;
@@ -99,9 +100,21 @@ h2{
 h3{
   color: red;
 }
-h4{
+#startButton{
   font-size: 3vw;
   color: red;
+}
+
+@media screen and (orientation: portrait){
+  #bigCircle{
+  position: relative;
+  text-align: center;
+  background-color: rgb(27, 27, 27);
+  height: 50vw;
+  width: 50vw;
+  border-radius: 50%;
+  display: inline-block;
+}
 }
 </style>
 <body>
@@ -119,7 +132,7 @@ h4{
 <div class="row">
 <div class="col">
 <span id="count">01</span>
-<span>
+<span id="startButton">
 Start<br>
 <button class="btn btn-primary btn-circle"></button>
 </span>
