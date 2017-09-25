@@ -109,6 +109,95 @@ h3{
     color: red;
   }
 
+@media only screen and (min-width: 419px) and (max-width: 628px)  {
+  body{
+    background-color: rgb(0, 52, 102);
+    text-align: center;
+  }
+  #bigCircle{
+    position: relative;
+    text-align: center;
+    background-color: rgb(27, 27, 27);
+    height: 77vw;
+    width: 77vw;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .btn-sq-lg{
+      width: 28.777vw;
+      height: 28.777vw;
+  }
+  #buttons{
+    margin-top: 11.777%;
+    position: relative;
+  }
+  #blue{
+    border-bottom-right-radius: 100%;
+    background-color: blue;
+  }
+  #green{
+    border-top-left-radius: 100%;
+    margin-bottom: .7%;
+    background-color: green;
+  }
+  #yellow{
+    border-bottom-left-radius: 100%;
+    background-color: yellow;
+  }
+  #red{
+    border-top-right-radius: 100%;
+    margin-bottom: .7%;
+    background-color: red;
+  }
+  #centerCircle{
+    position: absolute;
+    text-align: center;
+    top: 27%;
+    left: 25.9777%;
+    background-color: rgb(27, 27, 27);
+    padding-top: 2vw;;
+    border-radius: 50%;
+    height: 37vw;
+    width: 37vw;
+  }
+  h2{
+    color:red;
+    font-size: 3vw;
+    font-family: Rubik;
+  }
+  #count{
+    display: inline-block;
+    color: red;
+    background-color: black;
+    height: 11vw;
+    width: 11vw;
+    margin-left: 17%;
+    float: left;
+    font-size: 7vw;
+  }
+  #registeredTrademark{
+    color: red;
+    font-size: 1vw;
+    vertical-align:super;
+  }
+  .btn-circle{
+    height: 1vh;
+    width: 1vw;
+    border-radius: 50%;
+  }
+  h3{
+    color: red;
+  }
+  #startButton{
+    font-size: 2vw;
+    color: red;
+  }
+  #strictButton{
+    font-size: 2vw;
+    color: red;
+  }
+}
+
 @media screen and (orientation: portrait){
   body{
     background-color: rgb(0, 52, 102);
@@ -212,14 +301,14 @@ h3{
 <h2>Simon<i id="registeredTrademark" class="glyphicon glyphicon-registration-mark"></i></h2>
 <div class="row">
 <div class="col">
-<span id="count">01</span>
+<span id="count">00</span>
 <span id="startButton">
 Start<br>
 <button class="btn btn-primary btn-circle"></button>
 </span>
 <div id="strictButton">
-  test<br>
-  <button class="btn btn-primary btn-circle"></button>
+Strict<br>
+<button class="btn btn-primary btn-circle"></button>
 </div>
 </div>
 </div>
@@ -232,6 +321,8 @@ Start<br>
 </div>
 </div>
 <script>
+console.log($(window).width());
+console.log($(window).width());
 //if(window.innerHeight > window.innerWidth){
     //alert("Please use Landscape!");
 //};
