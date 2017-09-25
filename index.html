@@ -35,7 +35,7 @@ body{
   border-radius: 50%;
   display: inline-block;
 }
-button{
+.btn-sq-lg{
     width: 20vw;
     height: 20vw;
 }
@@ -63,6 +63,7 @@ button{
 }
 #centerCircle{
   position: absolute;
+  text-align: center;
   top: 28%;
   left: 28.777%;
   background-color: rgb(27, 27, 27);
@@ -76,6 +77,31 @@ h2{
   font-size: 3vw;
   font-family: Rubik;
 }
+#count{
+  display: inline-block;
+  color: red;
+  background-color: black;
+  height: 4vw;
+  width: 4vw;
+}
+#registeredTrademark{
+  color: red;
+  font-size: 1vw;
+  vertical-align:super;
+}
+.btn-circle{
+  height: 2vh;
+  width: 2vw;
+
+border-radius: 50%;
+}
+h3{
+  color: red;
+}
+h4{
+  font-size: 3vw;
+  color: red;
+}
 </style>
 <body>
 <div class="container">
@@ -87,7 +113,18 @@ h2{
 </div>
 </div>
 <div id="centerCircle">
-<h2>Simon</h2>
+<div id="insideCircle">
+<h2>Simon<i id="registeredTrademark" class="glyphicon glyphicon-registration-mark"></i></h2>
+<div class="row">
+<div class="col">
+<div id="count"><h4>01</h4></div>
+<div>
+<h3>Start</h3>
+<button class="btn btn-primary btn-circle"></button>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="col col-center;">
 <button id="yellow" class="btn btn-sq-lg btn-primary"></button>
