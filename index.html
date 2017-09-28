@@ -47,6 +47,12 @@ body{
   border-bottom-right-radius: 100%;
   background-color: rgba(0, 0, 255, 0.5);
 }
+.blue-lightUp{
+  background-color: rgba(0, 0, 255, 1);
+}
+.blue-lightOff{
+  background-color: rgba(0, 0, 255, 0.5);
+}
 #green{
   border-top-left-radius: 100%;
   margin-bottom: .7%;
@@ -249,6 +255,7 @@ h3{
     font-size: 2vw;
     color: red;
   }
+
 }
 </style>
 <body>
@@ -265,10 +272,10 @@ h3{
 <h2>Simon<i id="registeredTrademark" class="glyphicon glyphicon-registration-mark"></i></h2>
 <div class="row">
 <div class="col">
-<span id="count">00</span>
+<span id="count"></span>
 <span id="startButton">
 Start/Reset<br>
-<button class="btn btn-primary btn-circle"></button>
+<button id="start" class="btn btn-primary btn-circle"></button>
 </span>
 <div id="strictButton">
 Strict<br>
@@ -303,9 +310,79 @@ jQuery.fn.center = function () {
 //};
 //$("#centerCircle").center();
 var sequence = [];
-for(let i = 0; i < 20; i++){
-sequence.push(Math.floor(Math.random() * (4 - 1 + 1)) + 1);
+var playerSequence = [];
+var score = 0;
+var started = false;
+var strict = false;
+var sound1 = new Audio("simonSound1.mp3");
+var sound2 = new Audio("simonSound2.mp3");
+var sound3 = new Audio("simonSound3.mp3");
+var sound4 = new Audio("simonSound4.mp3");
+
+$("#start").on("click", function(){
+$("#count").html(score);
+if(started == false){
+$("#start").css("background-color", "red");
+started = true;
+nextLight();
+}else if(started == true){
+location.reload();
 }
+});
+
+function nextLight(){
+if(sequence.length < 20){
+sequence.push(Math.floor(Math.random() * (4 - 1 + 1)) + 1);
+console.log(sequence);
+score++;
+$("#count").html(score);
+for(let i = 0; i < sequence.length; i++){
+  if(sequence[i] == 1){
+    setTimeout(function(){
+      sound4.play();
+      $("#blue").css("background-color", "rgba(0, 0, 255, 1)");
+      setTimeout(function() {
+        $("#blue").css("background-color", "rgba(0, 0, 255, 0.5)");
+      }, 1000*0.8);
+    }, (i+1)*1000);
+  }
+  if(sequence[i] == 2){
+    setTimeout(function(){
+      sound1.play();
+      $("#green").css("background-color", "rgba(0, 128, 0, 1)");
+      setTimeout(function() {
+        $("#green").css("background-color", "rgba(0, 128, 0, 0.5)");
+      }, 1000*0.8);
+    }, (i+1)*1000);
+  }
+  if(sequence[i] == 3){
+    setTimeout(function(){
+      sound3.play();
+      $("#yellow").css("background-color", "rgba(255, 255, 0, 1)");
+      setTimeout(function() {
+        $("#yellow").css("background-color", "rgba(255, 255, 0, 0.5)");
+      }, 1000*0.8);
+    }, (i+1)*1000);
+  }
+  if(sequence[i] == 4){
+    setTimeout(function(){
+      sound2.play();
+      $("#red").css("background-color", "rgba(255, 0, 0, 1)");
+      setTimeout(function() {
+        $("#red").css("background-color", "rgba(255, 0, 0, 0.5)");
+      }, 1000*0.8);
+    }, (i+1)*1000);
+  }
+}
+}
+}
+//setTimeout(function(){
+//         $("#green").attr('class', 'green-on');
+//          document.getElementById("audio-green").play();
+//          setTimeout(function() {
+//            $("#green").attr('class', 'green-off');
+//          }, 1000*0.8);
+//        },(i+1)*1000);
 </script>
 </body>
 </html>
