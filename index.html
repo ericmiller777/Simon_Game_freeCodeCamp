@@ -330,6 +330,48 @@ location.reload();
 }
 });
 
+function currentLight(){
+console.log(sequence);
+for(let i = 0; i < sequence.length; i++){
+  if(sequence[i] == 1){
+    setTimeout(function(){
+      sound4.play();
+      $("#blue").css("background-color", "rgba(0, 0, 255, 1)");
+      setTimeout(function() {
+        $("#blue").css("background-color", "rgba(0, 0, 255, 0.5)");
+      }, 1000*0.8);
+    }, (i+1)*1000);
+  }
+  if(sequence[i] == 2){
+    setTimeout(function(){
+      sound1.play();
+      $("#green").css("background-color", "rgba(0, 128, 0, 1)");
+      setTimeout(function() {
+        $("#green").css("background-color", "rgba(0, 128, 0, 0.5)");
+      }, 1000*0.8);
+    }, (i+1)*1000);
+  }
+  if(sequence[i] == 3){
+    setTimeout(function(){
+      sound3.play();
+      $("#yellow").css("background-color", "rgba(255, 255, 0, 1)");
+      setTimeout(function() {
+        $("#yellow").css("background-color", "rgba(255, 255, 0, 0.5)");
+      }, 1000*0.8);
+    }, (i+1)*1000);
+  }
+  if(sequence[i] == 4){
+    setTimeout(function(){
+      sound2.play();
+      $("#red").css("background-color", "rgba(255, 0, 0, 1)");
+      setTimeout(function() {
+        $("#red").css("background-color", "rgba(255, 0, 0, 0.5)");
+      }, 1000*0.8);
+    }, (i+1)*1000);
+  }
+}
+}
+
 function nextLight(){
 if(sequence.length < 21){
 sequence.push(Math.floor(Math.random() * (4 - 1 + 1)) + 1);
@@ -376,11 +418,14 @@ for(let i = 0; i < sequence.length; i++){
 }
 }
 }
-var poop = 0;
 $("#blue").on("click", function(){
-  poop++;
-    console.log(poop);
       sound4.play();
+      if(playerSequence.length < sequence.length){
+      index++;
+      playerSequence.push(1);
+      checkSequence();
+      console.log(playerSequence);
+      }
       $("#blue").css("background-color", "rgba(0, 0, 255, 1)");
       setTimeout(function() {
         $("#blue").css("background-color", "rgba(0, 0, 255, 0.5)");
@@ -388,6 +433,11 @@ $("#blue").on("click", function(){
 });
 $("#green").on("click", function(){
       sound1.play();
+      if(playerSequence.length < sequence.length){
+      index++;
+      playerSequence.push(2);
+      checkSequence();
+      }
       $("#green").css("background-color", "rgba(0, 128, 0, 1)");
       setTimeout(function() {
         $("#green").css("background-color", "rgba(0, 128, 0, 0.5)");
@@ -396,6 +446,11 @@ $("#green").on("click", function(){
 
 $("#yellow").on("click", function(){
       sound3.play();
+      if(playerSequence.length < sequence.length){
+      index++;
+      playerSequence.push(3);
+      checkSequence();
+      }
       $("#yellow").css("background-color", "rgba(255, 255, 0, 1)");
       setTimeout(function() {
         $("#yellow").css("background-color", "rgba(255, 255, 0, 0.5)");
@@ -404,11 +459,33 @@ $("#yellow").on("click", function(){
 
 $("#red").on("click", function(){
       sound2.play();
+      if(playerSequence.length < sequence.length){
+      index++;
+      playerSequence.push(4);
+      checkSequence();
+      }
       $("#red").css("background-color", "rgba(255, 0, 0, 1)");
       setTimeout(function() {
         $("#red").css("background-color", "rgba(255, 0, 0, 0.5)");
       }, 407);
 });
+var index = -1;
+function checkSequence(){
+  if(playerSequence[index] == sequence[index]){
+    if(playerSequence.length == sequence.length){
+    playerSequence = [];
+    index = -1;
+    nextLight();
+    }
+  }else{
+  if(playerSequence[index] != sequence[index]){
+    console.log("your shit");
+    index = -1;
+    playerSequence = [];
+    currentLight();
+  }
+  }
+}
 //sequence.push(Math.floor(Math.random() * (4 - 1 + 1)) + 1);
 //for(let i = 0; i < sequence.length; i++){
 //nextLight();
