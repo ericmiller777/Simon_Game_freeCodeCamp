@@ -412,8 +412,10 @@ Start/Reset<br>
             }, 1000 * 0.8);
           }, (i + 1) * 1000);
         }
+        setTimeout(function () {
+              noClick = false;
+            }, (sequence.length + 1) * 1000);
       }
-      noClick = false;
     }
     function nextLight() {
       noClick = true;
@@ -477,9 +479,11 @@ Start/Reset<br>
             }, (i + 1) * 1000);
           }else{
             break;
-          }  
+          }
+          setTimeout(function () {
+              noClick = false;
+            }, (sequence.length + 1) * 1000);
         }
-        noClick = false;
       }
     
     }
