@@ -1,4 +1,5 @@
 <html>
+<!-- I'd like to accredit @gersho on the freeCodeCamp gitter for helping me with the nested selfTimeout functions for the light ups, and timeing the players turn, not to interrupt the game. -->
 <!-- <h1>Hi Baby, I love you!</h1> -->
 
 <head>
@@ -368,66 +369,66 @@ Start/Reset<br>
       console.log(sequence);
       bad = false;
       console.log(noClick);
-      
+
       for (let i = 0; i < sequence.length; i++) {
-        setTimeout(function (){    
-            }, i * 1000);
+        setTimeout(function () {
+        }, i * 1000);
         if (sequence[i] == 1) {
           setTimeout(function () {
             sound4.play();
             $("#blue").css("background-color", "rgba(0, 0, 255, 1)");
             setTimeout(function () {
               $("#blue").css("background-color", "rgba(0, 0, 255, 0.5)");
-              
+
             }, 1000 * 0.8);
           }, (i + 1) * 1000);
-        }else if (sequence[i] == 2) {
+        } else if (sequence[i] == 2) {
           setTimeout(function () {
-            
+
             sound1.play();
             $("#green").css("background-color", "rgba(0, 128, 0, 1)");
             setTimeout(function () {
               $("#green").css("background-color", "rgba(0, 128, 0, 0.5)");
-            
+
             }, 1000 * 0.8);
           }, (i + 1) * 1000);
-        }else if (sequence[i] == 3) {
+        } else if (sequence[i] == 3) {
           setTimeout(function () {
-            
+
             sound3.play();
             $("#yellow").css("background-color", "rgba(255, 255, 0, 1)");
             setTimeout(function () {
               $("#yellow").css("background-color", "rgba(255, 255, 0, 0.5)");
-            
+
             }, 1000 * 0.8);
           }, (i + 1) * 1000);
-        }else if (sequence[i] == 4) {
+        } else if (sequence[i] == 4) {
           setTimeout(function () {
-            
+
             sound2.play();
             $("#red").css("background-color", "rgba(255, 0, 0, 1)");
             setTimeout(function () {
               $("#red").css("background-color", "rgba(255, 0, 0, 0.5)");
-            
+
             }, 1000 * 0.8);
           }, (i + 1) * 1000);
         }
         setTimeout(function () {
-              noClick = false;
-            }, (sequence.length + 1) * 1000);
+          noClick = false;
+        }, (sequence.length + 1) * 1000);
       }
     }
     function nextLight() {
       noClick = true;
       sequence.push(Math.floor(Math.random() * (4 - 1 + 1)) + 1);
-      if(sequence >= 21){
+      if (sequence >= 21) {
         $("#count").html("You<br>Win!");
         $("#count").css("font-size", "2.1vw");
         $("#blue").css("background-color", "rgba(0, 0, 255, 1)");
         $("#green").css("background-color", "rgba(0, 128, 0, 1)");
         $("#yellow").css("background-color", "rgba(255, 255, 0, 1)");
         $("#red").css("background-color", "rgba(255, 0, 0, 1)");
-      }else if (sequence.length < 21) {
+      } else if (sequence.length < 21) {
         console.log(noClick);
         bad = false;
         console.log(sequence);
@@ -435,116 +436,116 @@ Start/Reset<br>
         for (let i = 0; i < sequence.length; i++) {
           $("#count").html(score);
           if (sequence[i] == 1 && bad == false) {
-            
+
             setTimeout(function () {
               sound4.play();
               $("#blue").css("background-color", "rgba(0, 0, 255, 1)");
               setTimeout(function () {
                 $("#blue").css("background-color", "rgba(0, 0, 255, 0.5)");
-              
+
               }, 1000 * 0.8);
             }, (i + 1) * 1000);
-          }else if (sequence[i] == 2 && bad == false) {
+          } else if (sequence[i] == 2 && bad == false) {
             $("#count").html(score);
-            
+
             setTimeout(function () {
               sound1.play();
               $("#green").css("background-color", "rgba(0, 128, 0, 1)");
               setTimeout(function () {
                 $("#green").css("background-color", "rgba(0, 128, 0, 0.5)");
-              
+
               }, 1000 * 0.8);
             }, (i + 1) * 1000);
-          }else if (sequence[i] == 3 && bad == false) {
+          } else if (sequence[i] == 3 && bad == false) {
             $("#count").html(score);
-            
+
             setTimeout(function () {
               sound3.play();
               $("#yellow").css("background-color", "rgba(255, 255, 0, 1)");
               setTimeout(function () {
                 $("#yellow").css("background-color", "rgba(255, 255, 0, 0.5)");
-              
+
               }, 1000 * 0.8);
             }, (i + 1) * 1000);
-          }else if (sequence[i] == 4 && bad == false) {
+          } else if (sequence[i] == 4 && bad == false) {
             $("#count").html(score);
-            
+
             setTimeout(function () {
               sound2.play();
               $("#red").css("background-color", "rgba(255, 0, 0, 1)");
               setTimeout(function () {
                 $("#red").css("background-color", "rgba(255, 0, 0, 0.5)");
-              
+
               }, 1000 * 0.8);
             }, (i + 1) * 1000);
-          }else{
+          } else {
             break;
           }
           setTimeout(function () {
-              noClick = false;
-            }, (sequence.length + 1) * 1000);
+            noClick = false;
+          }, (sequence.length + 1) * 1000);
         }
       }
-    
+
     }
     $("#blue").on("click", function () {
-      if(noClick == false){
-      console.log(noClick);
-      sound4.play();
-      if (playerSequence.length < sequence.length) {
-        index++;
-        playerSequence.push(1);
-        checkSequence();
-        console.log(playerSequence);
+      if (noClick == false) {
+        console.log(noClick);
+        sound4.play();
+        if (playerSequence.length < sequence.length) {
+          index++;
+          playerSequence.push(1);
+          checkSequence();
+          console.log(playerSequence);
+        }
+        $("#blue").css("background-color", "rgba(0, 0, 255, 1)");
+        setTimeout(function () {
+          $("#blue").css("background-color", "rgba(0, 0, 255, 0.5)");
+        }, 407);
       }
-      $("#blue").css("background-color", "rgba(0, 0, 255, 1)");
-      setTimeout(function () {
-        $("#blue").css("background-color", "rgba(0, 0, 255, 0.5)");
-      }, 407);
-    }
     });
     $("#green").on("click", function () {
-      if(noClick == false){
-      sound1.play();
-      if (playerSequence.length < sequence.length) {
-        index++;
-        playerSequence.push(2);
-        checkSequence();
-      }
-      $("#green").css("background-color", "rgba(0, 128, 0, 1)");
-      setTimeout(function () {
-        $("#green").css("background-color", "rgba(0, 128, 0, 0.5)");
-      }, 407);
+      if (noClick == false) {
+        sound1.play();
+        if (playerSequence.length < sequence.length) {
+          index++;
+          playerSequence.push(2);
+          checkSequence();
+        }
+        $("#green").css("background-color", "rgba(0, 128, 0, 1)");
+        setTimeout(function () {
+          $("#green").css("background-color", "rgba(0, 128, 0, 0.5)");
+        }, 407);
       }
     });
 
     $("#yellow").on("click", function () {
-      if(noClick == false){
-      sound3.play();
-      if (playerSequence.length < sequence.length) {
-        index++;
-        playerSequence.push(3);
-        checkSequence();
-      }
-      $("#yellow").css("background-color", "rgba(255, 255, 0, 1)");
-      setTimeout(function () {
-        $("#yellow").css("background-color", "rgba(255, 255, 0, 0.5)");
-      }, 407);
+      if (noClick == false) {
+        sound3.play();
+        if (playerSequence.length < sequence.length) {
+          index++;
+          playerSequence.push(3);
+          checkSequence();
+        }
+        $("#yellow").css("background-color", "rgba(255, 255, 0, 1)");
+        setTimeout(function () {
+          $("#yellow").css("background-color", "rgba(255, 255, 0, 0.5)");
+        }, 407);
       }
     });
 
     $("#red").on("click", function () {
-      if(noClick == false){
-      sound2.play();
-      if (playerSequence.length < sequence.length) {
-        index++;
-        playerSequence.push(4);
-        checkSequence();
-      }
-      $("#red").css("background-color", "rgba(255, 0, 0, 1)");
-      setTimeout(function () {
-        $("#red").css("background-color", "rgba(255, 0, 0, 0.5)");
-      }, 407);
+      if (noClick == false) {
+        sound2.play();
+        if (playerSequence.length < sequence.length) {
+          index++;
+          playerSequence.push(4);
+          checkSequence();
+        }
+        $("#red").css("background-color", "rgba(255, 0, 0, 1)");
+        setTimeout(function () {
+          $("#red").css("background-color", "rgba(255, 0, 0, 0.5)");
+        }, 407);
       }
     });
     var index = -1;
@@ -597,7 +598,6 @@ Start/Reset<br>
 //            $("#green").attr('class', 'green-off');
 //          }, 1000*0.8);
 //        },(i+1)*1000);
-
   </script>
 </body>
 
