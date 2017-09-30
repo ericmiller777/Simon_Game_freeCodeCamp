@@ -364,6 +364,7 @@ Start/Reset<br>
     });
 
     function currentLight() {
+      noClick = true;
       console.log(sequence);
       bad = false;
       console.log(noClick);
@@ -380,8 +381,7 @@ Start/Reset<br>
               
             }, 1000 * 0.8);
           }, (i + 1) * 1000);
-        }
-        if (sequence[i] == 2) {
+        }else if (sequence[i] == 2) {
           setTimeout(function () {
             
             sound1.play();
@@ -391,8 +391,7 @@ Start/Reset<br>
             
             }, 1000 * 0.8);
           }, (i + 1) * 1000);
-        }
-        if (sequence[i] == 3) {
+        }else if (sequence[i] == 3) {
           setTimeout(function () {
             
             sound3.play();
@@ -402,8 +401,7 @@ Start/Reset<br>
             
             }, 1000 * 0.8);
           }, (i + 1) * 1000);
-        }
-        if (sequence[i] == 4) {
+        }else if (sequence[i] == 4) {
           setTimeout(function () {
             
             sound2.play();
@@ -415,8 +413,10 @@ Start/Reset<br>
           }, (i + 1) * 1000);
         }
       }
+      noClick = false;
     }
     function nextLight() {
+      noClick = true;
       sequence.push(Math.floor(Math.random() * (4 - 1 + 1)) + 1);
       if(sequence >= 21){
         $("#count").html("You<br>Win!");
@@ -425,8 +425,7 @@ Start/Reset<br>
         $("#green").css("background-color", "rgba(0, 128, 0, 1)");
         $("#yellow").css("background-color", "rgba(255, 255, 0, 1)");
         $("#red").css("background-color", "rgba(255, 0, 0, 1)");
-      }
-      if (sequence.length < 21) {
+      }else if (sequence.length < 21) {
         console.log(noClick);
         bad = false;
         console.log(sequence);
@@ -480,6 +479,7 @@ Start/Reset<br>
             break;
           }  
         }
+        noClick = false;
       }
     
     }
