@@ -332,6 +332,7 @@ Start/Reset<br>
     //$("#centerCircle").center();
     var sequence = [];
     var bad = false;
+    var noClick = false;
     var playerSequence = [];
     var score = 0;
     var started = false;
@@ -365,40 +366,51 @@ Start/Reset<br>
     function currentLight() {
       console.log(sequence);
       bad = false;
+      console.log(noClick);
+      
       for (let i = 0; i < sequence.length; i++) {
+        setTimeout(function (){    
+            }, i * 1000);
         if (sequence[i] == 1) {
           setTimeout(function () {
             sound4.play();
             $("#blue").css("background-color", "rgba(0, 0, 255, 1)");
             setTimeout(function () {
               $("#blue").css("background-color", "rgba(0, 0, 255, 0.5)");
+              
             }, 1000 * 0.8);
           }, (i + 1) * 1000);
         }
         if (sequence[i] == 2) {
           setTimeout(function () {
+            
             sound1.play();
             $("#green").css("background-color", "rgba(0, 128, 0, 1)");
             setTimeout(function () {
               $("#green").css("background-color", "rgba(0, 128, 0, 0.5)");
+            
             }, 1000 * 0.8);
           }, (i + 1) * 1000);
         }
         if (sequence[i] == 3) {
           setTimeout(function () {
+            
             sound3.play();
             $("#yellow").css("background-color", "rgba(255, 255, 0, 1)");
             setTimeout(function () {
               $("#yellow").css("background-color", "rgba(255, 255, 0, 0.5)");
+            
             }, 1000 * 0.8);
           }, (i + 1) * 1000);
         }
         if (sequence[i] == 4) {
           setTimeout(function () {
+            
             sound2.play();
             $("#red").css("background-color", "rgba(255, 0, 0, 1)");
             setTimeout(function () {
               $("#red").css("background-color", "rgba(255, 0, 0, 0.5)");
+            
             }, 1000 * 0.8);
           }, (i + 1) * 1000);
         }
@@ -415,53 +427,65 @@ Start/Reset<br>
         $("#red").css("background-color", "rgba(255, 0, 0, 1)");
       }
       if (sequence.length < 21) {
+        console.log(noClick);
         bad = false;
         console.log(sequence);
         score++;
         for (let i = 0; i < sequence.length; i++) {
           $("#count").html(score);
           if (sequence[i] == 1 && bad == false) {
+            
             setTimeout(function () {
               sound4.play();
               $("#blue").css("background-color", "rgba(0, 0, 255, 1)");
               setTimeout(function () {
                 $("#blue").css("background-color", "rgba(0, 0, 255, 0.5)");
+              
               }, 1000 * 0.8);
             }, (i + 1) * 1000);
           }else if (sequence[i] == 2 && bad == false) {
             $("#count").html(score);
+            
             setTimeout(function () {
               sound1.play();
               $("#green").css("background-color", "rgba(0, 128, 0, 1)");
               setTimeout(function () {
                 $("#green").css("background-color", "rgba(0, 128, 0, 0.5)");
+              
               }, 1000 * 0.8);
             }, (i + 1) * 1000);
           }else if (sequence[i] == 3 && bad == false) {
             $("#count").html(score);
+            
             setTimeout(function () {
               sound3.play();
               $("#yellow").css("background-color", "rgba(255, 255, 0, 1)");
               setTimeout(function () {
                 $("#yellow").css("background-color", "rgba(255, 255, 0, 0.5)");
+              
               }, 1000 * 0.8);
             }, (i + 1) * 1000);
           }else if (sequence[i] == 4 && bad == false) {
             $("#count").html(score);
+            
             setTimeout(function () {
               sound2.play();
               $("#red").css("background-color", "rgba(255, 0, 0, 1)");
               setTimeout(function () {
                 $("#red").css("background-color", "rgba(255, 0, 0, 0.5)");
+              
               }, 1000 * 0.8);
             }, (i + 1) * 1000);
           }else{
             break;
-          }
+          }  
         }
       }
+    
     }
     $("#blue").on("click", function () {
+      if(noClick == false){
+      console.log(noClick);
       sound4.play();
       if (playerSequence.length < sequence.length) {
         index++;
@@ -473,8 +497,10 @@ Start/Reset<br>
       setTimeout(function () {
         $("#blue").css("background-color", "rgba(0, 0, 255, 0.5)");
       }, 407);
+    }
     });
     $("#green").on("click", function () {
+      if(noClick == false){
       sound1.play();
       if (playerSequence.length < sequence.length) {
         index++;
@@ -485,9 +511,11 @@ Start/Reset<br>
       setTimeout(function () {
         $("#green").css("background-color", "rgba(0, 128, 0, 0.5)");
       }, 407);
+      }
     });
 
     $("#yellow").on("click", function () {
+      if(noClick == false){
       sound3.play();
       if (playerSequence.length < sequence.length) {
         index++;
@@ -498,9 +526,11 @@ Start/Reset<br>
       setTimeout(function () {
         $("#yellow").css("background-color", "rgba(255, 255, 0, 0.5)");
       }, 407);
+      }
     });
 
     $("#red").on("click", function () {
+      if(noClick == false){
       sound2.play();
       if (playerSequence.length < sequence.length) {
         index++;
@@ -511,6 +541,7 @@ Start/Reset<br>
       setTimeout(function () {
         $("#red").css("background-color", "rgba(255, 0, 0, 0.5)");
       }, 407);
+      }
     });
     var index = -1;
     function checkSequence() {
