@@ -1,491 +1,556 @@
 <html>
 <!-- <h1>Hi Baby, I love you!</h1> -->
+
 <head>
-<!-- jQuery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-<!-- Latest compiled and minified JavaScript  -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
-  crossorigin="anonymous">
+  <!-- Latest compiled and minified JavaScript  -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
+    crossorigin="anonymous">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 
-<link href="https://fonts.googleapis.com/css?family=Rubik:900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Rubik:900" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <style>
-body{
-  background-color: rgb(0, 52, 102);
-  text-align: center;
-}
-#bigCircle{
-  position: relative;
-  text-align: center;
-  background-color: rgb(27, 27, 27);
-  height: 50vw;
-  width: 50vw;
-  border-radius: 50%;
-  display: inline-block;
-}
-.btn-sq-lg{
+  body {
+    background-color: rgb(0, 52, 102);
+    text-align: center;
+  }
+
+  #bigCircle {
+    position: relative;
+    text-align: center;
+    background-color: rgb(27, 27, 27);
+    height: 50vw;
+    width: 50vw;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .btn-sq-lg {
     width: 20vw;
     height: 20vw;
-}
-#buttons{
-  margin-top: 10%;
-  position: relative;
-}
-#blue{
-  border-bottom-right-radius: 100%;
-  background-color: rgba(0, 0, 255, 0.5);
-}
-.blue-lightUp{
-  background-color: rgba(0, 0, 255, 1);
-}
-.blue-lightOff{
-  background-color: rgba(0, 0, 255, 0.5);
-}
-#green{
-  border-top-left-radius: 100%;
-  margin-bottom: .7%;
-  background-color: rgba(0, 128, 0, 0.5);
-}
-#yellow{
-  border-bottom-left-radius: 100%;
-  background-color: rgba(255, 255, 0, 0.5);
-}
-#red{
-  border-top-right-radius: 100%;
-  margin-bottom: .7%;
-  background-color: rgba(255, 0, 0, 0.5);
-}
-#centerCircle{
-  position: absolute;
-  text-align: center;
-  top: 29.57%;
-  left: 28.777%;
-  background-color: rgb(27, 27, 27);
-  padding-top: 2vw;;
-  border-radius: 50%;
-  height: 21vw;
-  width: 21vw;
-}
-h2{
-  color:red;
-  font-size: 3vw;
-  font-family: Rubik;
-}
-#count{
-  display: inline-block;
-  color: red;
-  background-color: black;
-  height: 4vw;
-  width: 4vw;
-  margin-left: 17%;
-  float: left;
-  font-size: 3vw;
-}
-#registeredTrademark{
-  color: red;
-  font-size: 1vw;
-  vertical-align:super;
-}
-.btn-circle{
-  height: 2vh;
-  width: 2vw;
-  border-radius: 50%;
-}
-h3{
-  color: red;
-}
-#startButton{
-  font-size: 2vw;
-  color: red;
-}
-#strictButton{
-    font-size: 2vw;
-    color: red;
   }
 
-@media only screen and (min-width: 419px) and (max-width: 628px)  {
-  body{
-    background-color: rgb(0, 52, 102);
-    text-align: center;
-  }
-  #bigCircle{
-    position: relative;
-    text-align: center;
-    background-color: rgb(27, 27, 27);
-    height: 77vw;
-    width: 77vw;
-    border-radius: 50%;
-    display: inline-block;
-  }
-  .btn-sq-lg{
-      width: 28.777vw;
-      height: 28.777vw;
-  }
-  #buttons{
-    margin-top: 11.777%;
+  #buttons {
+    margin-top: 10%;
     position: relative;
   }
-  #centerCircle{
+
+  #blue {
+    border-bottom-right-radius: 100%;
+    background-color: rgba(0, 0, 255, 0.5);
+  }
+
+  .blue-lightUp {
+    background-color: rgba(0, 0, 255, 1);
+  }
+
+  .blue-lightOff {
+    background-color: rgba(0, 0, 255, 0.5);
+  }
+
+  #green {
+    border-top-left-radius: 100%;
+    margin-bottom: .7%;
+    background-color: rgba(0, 128, 0, 0.5);
+  }
+
+  #yellow {
+    border-bottom-left-radius: 100%;
+    background-color: rgba(255, 255, 0, 0.5);
+  }
+
+  #red {
+    border-top-right-radius: 100%;
+    margin-bottom: .7%;
+    background-color: rgba(255, 0, 0, 0.5);
+  }
+
+  #centerCircle {
     position: absolute;
     text-align: center;
-    top: 27%;
-    left: 25.9777%;
+    top: 29.57%;
+    left: 28.777%;
     background-color: rgb(27, 27, 27);
-    padding-top: 2vw;;
+    padding-top: 2vw;
+    ;
     border-radius: 50%;
-    height: 37vw;
-    width: 37vw;
+    height: 21vw;
+    width: 21vw;
   }
-  h2{
-    color:red;
+
+  h2 {
+    color: red;
     font-size: 3vw;
     font-family: Rubik;
   }
-  #count{
+
+  #count {
     display: inline-block;
     color: red;
     background-color: black;
-    height: 11vw;
-    width: 11vw;
+    height: 4vw;
+    width: 4vw;
     margin-left: 17%;
     float: left;
-    font-size: 7vw;
+    font-size: 3vw;
   }
-  #registeredTrademark{
+
+  #registeredTrademark {
     color: red;
     font-size: 1vw;
-    vertical-align:super;
+    vertical-align: super;
   }
-  .btn-circle{
-    height: 1vh;
-    width: 1vw;
-    border-radius: 50%;
-  }
-  h3{
-    color: red;
-  }
-  #startButton{
-    font-size: 2vw;
-    color: red;
-  }
-  #strictButton{
-    font-size: 2vw;
-    color: red;
-  }
-}
 
-@media screen and (orientation: portrait){
-  body{
-    background-color: rgb(0, 52, 102);
-    text-align: center;
-  }
-  #bigCircle{
-    position: relative;
-    text-align: center;
-    background-color: rgb(27, 27, 27);
-    height: 77vw;
-    width: 77vw;
+  .btn-circle {
+    height: 2vh;
+    width: 2vw;
     border-radius: 50%;
-    display: inline-block;
   }
-  .btn-sq-lg{
+
+  h3 {
+    color: red;
+  }
+
+  #startButton {
+    font-size: 2vw;
+    color: red;
+  }
+
+  #strictButton {
+    font-size: 2vw;
+    color: red;
+  }
+
+  @media only screen and (min-width: 419px) and (max-width: 628px) {
+    body {
+      background-color: rgb(0, 52, 102);
+      text-align: center;
+    }
+    #bigCircle {
+      position: relative;
+      text-align: center;
+      background-color: rgb(27, 27, 27);
+      height: 77vw;
+      width: 77vw;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .btn-sq-lg {
       width: 28.777vw;
       height: 28.777vw;
-  }
-  #buttons{
-    margin-top: 11.777%;
-    position: relative;
-  }
-  #centerCircle{
-    position: absolute;
-    text-align: center;
-    top: 25.777%;
-    left: 25.9777%;
-    background-color: rgb(27, 27, 27);
-    padding-top: 2vw;;
-    border-radius: 50%;
-    height: 37vw;
-    width: 37vw;
-  }
-  h2{
-    color:red;
-    font-size: 3vw;
-    font-family: Rubik;
-  }
-  #count{
-    display: inline-block;
-    color: red;
-    background-color: black;
-    height: 11vw;
-    width: 11vw;
-    margin-left: 17%;
-    float: left;
-    font-size: 8.0007vw;
-  }
-  #registeredTrademark{
-    color: red;
-    font-size: 1vw;
-    vertical-align:super;
-  }
-  .btn-circle{
-    height: 1vh;
-    width: 1vw;
-    border-radius: 50%;
-  }
-  h3{
-    color: red;
-  }
-  #startButton{
-    font-size: 2vw;
-    color: red;
-  }
-  #strictButton{
-    font-size: 2vw;
-    color: red;
+    }
+    #buttons {
+      margin-top: 11.777%;
+      position: relative;
+    }
+    #centerCircle {
+      position: absolute;
+      text-align: center;
+      top: 27%;
+      left: 25.9777%;
+      background-color: rgb(27, 27, 27);
+      padding-top: 2vw;
+      ;
+      border-radius: 50%;
+      height: 37vw;
+      width: 37vw;
+    }
+    h2 {
+      color: red;
+      font-size: 3vw;
+      font-family: Rubik;
+    }
+    #count {
+      display: inline-block;
+      color: red;
+      background-color: black;
+      height: 11vw;
+      width: 11vw;
+      margin-left: 17%;
+      float: left;
+      font-size: 7vw;
+    }
+    #registeredTrademark {
+      color: red;
+      font-size: 1vw;
+      vertical-align: super;
+    }
+    .btn-circle {
+      height: 1vh;
+      width: 1vw;
+      border-radius: 50%;
+    }
+    h3 {
+      color: red;
+    }
+    #startButton {
+      font-size: 2vw;
+      color: red;
+    }
+    #strictButton {
+      font-size: 2vw;
+      color: red;
+    }
   }
 
-}
+  @media screen and (orientation: portrait) {
+    body {
+      background-color: rgb(0, 52, 102);
+      text-align: center;
+    }
+    #bigCircle {
+      position: relative;
+      text-align: center;
+      background-color: rgb(27, 27, 27);
+      height: 77vw;
+      width: 77vw;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .btn-sq-lg {
+      width: 28.777vw;
+      height: 28.777vw;
+    }
+    #buttons {
+      margin-top: 11.777%;
+      position: relative;
+    }
+    #centerCircle {
+      position: absolute;
+      text-align: center;
+      top: 25.777%;
+      left: 25.9777%;
+      background-color: rgb(27, 27, 27);
+      padding-top: 2vw;
+      ;
+      border-radius: 50%;
+      height: 37vw;
+      width: 37vw;
+    }
+    h2 {
+      color: red;
+      font-size: 3vw;
+      font-family: Rubik;
+    }
+    #count {
+      display: inline-block;
+      color: red;
+      background-color: black;
+      height: 11vw;
+      width: 11vw;
+      margin-left: 17%;
+      float: left;
+      font-size: 8.0007vw;
+    }
+    #registeredTrademark {
+      color: red;
+      font-size: 1vw;
+      vertical-align: super;
+    }
+    .btn-circle {
+      height: 1vh;
+      width: 1vw;
+      border-radius: 50%;
+    }
+    h3 {
+      color: red;
+    }
+    #startButton {
+      font-size: 2vw;
+      color: red;
+    }
+    #strictButton {
+      font-size: 2vw;
+      color: red;
+    }
+  }
 </style>
+
 <body>
-<div class="container">
-<div id="bigCircle">
-<div id="buttons" class="row">
-<div class="col col-center">
-<button id="green" class="btn btn-sq-lg btn-primary"></button>
-<button id="red" class="btn btn-sq-lg btn-primary"></button>
-</div>
-</div>
-<div id="centerCircle">
-<div id="insideCircle">
-<h2>Simon<i id="registeredTrademark" class="glyphicon glyphicon-registration-mark"></i></h2>
-<div class="row">
-<div class="col">
-<span id="count"></span>
-<span id="startButton">
+  <div class="container">
+    <div id="bigCircle">
+      <div id="buttons" class="row">
+        <div class="col col-center">
+          <button id="green" class="btn btn-sq-lg btn-primary"></button>
+          <button id="red" class="btn btn-sq-lg btn-primary"></button>
+        </div>
+      </div>
+      <div id="centerCircle">
+        <div id="insideCircle">
+          <h2>Simon<i id="registeredTrademark" class="glyphicon glyphicon-registration-mark"></i></h2>
+          <div class="row">
+            <div class="col">
+              <span id="count"></span>
+              <span id="startButton">
 Start/Reset<br>
 <button id="start" class="btn btn-primary btn-circle"></button>
 </span>
-<div id="strictButton">
-Strict<br>
-<button class="btn btn-primary btn-circle"></button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="col col-center;">
-<button id="yellow" class="btn btn-sq-lg btn-primary"></button>
-<button id="blue" class="btn btn-sq-lg btn-primary"></button>
-</div>
-</div>
-</div>
-<script>
-console.log($(window).width());
-console.log($(window).width());
-//if(window.innerHeight > window.innerWidth){
+              <div id="strictButton">
+                Strict<br>
+                <button id="strict" class="btn btn-primary btn-circle"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col col-center;">
+        <button id="yellow" class="btn btn-sq-lg btn-primary"></button>
+        <button id="blue" class="btn btn-sq-lg btn-primary"></button>
+      </div>
+    </div>
+  </div>
+  <script>
+    console.log($(window).width());
+    console.log($(window).width());
+    //if(window.innerHeight > window.innerWidth){
     //alert("Please use Landscape!");
-//};
-jQuery.fn.center = function () {
-    this.css("position","absolute");
-    this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + 
-                                                $(window).scrollTop()) + "px");
-    this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + 
-                                                $(window).scrollLeft()) + "px");
-    return this;
-}
-//window.onresize = function(event) {
-  //$("#centerCircle").center();
-//};
-//$("#centerCircle").center();
-var sequence = [];
-var playerSequence = [];
-var score = 0;
-var started = false;
-var strict = false;
-var sound1 = new Audio("./simonSound1.mp3");
-var sound2 = new Audio("./simonSound2.mp3");
-var sound3 = new Audio("./simonSound3.mp3");
-var sound4 = new Audio("./simonSound4.mp3");
-
-$("#start").on("click", function(){
-$("#count").html(score);
-if(started == false){
-$("#start").css("background-color", "red");
-started = true;
-nextLight();
-}else if(started == true){
-location.reload();
-}
-});
-
-function currentLight(){
-console.log(sequence);
-for(let i = 0; i < sequence.length; i++){
-  if(sequence[i] == 1){
-    setTimeout(function(){
-      sound4.play();
-      $("#blue").css("background-color", "rgba(0, 0, 255, 1)");
-      setTimeout(function() {
-        $("#blue").css("background-color", "rgba(0, 0, 255, 0.5)");
-      }, 1000*0.8);
-    }, (i+1)*1000);
-  }
-  if(sequence[i] == 2){
-    setTimeout(function(){
-      sound1.play();
-      $("#green").css("background-color", "rgba(0, 128, 0, 1)");
-      setTimeout(function() {
-        $("#green").css("background-color", "rgba(0, 128, 0, 0.5)");
-      }, 1000*0.8);
-    }, (i+1)*1000);
-  }
-  if(sequence[i] == 3){
-    setTimeout(function(){
-      sound3.play();
-      $("#yellow").css("background-color", "rgba(255, 255, 0, 1)");
-      setTimeout(function() {
-        $("#yellow").css("background-color", "rgba(255, 255, 0, 0.5)");
-      }, 1000*0.8);
-    }, (i+1)*1000);
-  }
-  if(sequence[i] == 4){
-    setTimeout(function(){
-      sound2.play();
-      $("#red").css("background-color", "rgba(255, 0, 0, 1)");
-      setTimeout(function() {
-        $("#red").css("background-color", "rgba(255, 0, 0, 0.5)");
-      }, 1000*0.8);
-    }, (i+1)*1000);
-  }
-}
-}
-
-function nextLight(){
-if(sequence.length < 21){
-sequence.push(Math.floor(Math.random() * (4 - 1 + 1)) + 1);
-console.log(sequence);
-score++;
-$("#count").html(score);
-for(let i = 0; i < sequence.length; i++){
-  if(sequence[i] == 1){
-    setTimeout(function(){
-      sound4.play();
-      $("#blue").css("background-color", "rgba(0, 0, 255, 1)");
-      setTimeout(function() {
-        $("#blue").css("background-color", "rgba(0, 0, 255, 0.5)");
-      }, 1000*0.8);
-    }, (i+1)*1000);
-  }
-  if(sequence[i] == 2){
-    setTimeout(function(){
-      sound1.play();
-      $("#green").css("background-color", "rgba(0, 128, 0, 1)");
-      setTimeout(function() {
-        $("#green").css("background-color", "rgba(0, 128, 0, 0.5)");
-      }, 1000*0.8);
-    }, (i+1)*1000);
-  }
-  if(sequence[i] == 3){
-    setTimeout(function(){
-      sound3.play();
-      $("#yellow").css("background-color", "rgba(255, 255, 0, 1)");
-      setTimeout(function() {
-        $("#yellow").css("background-color", "rgba(255, 255, 0, 0.5)");
-      }, 1000*0.8);
-    }, (i+1)*1000);
-  }
-  if(sequence[i] == 4){
-    setTimeout(function(){
-      sound2.play();
-      $("#red").css("background-color", "rgba(255, 0, 0, 1)");
-      setTimeout(function() {
-        $("#red").css("background-color", "rgba(255, 0, 0, 0.5)");
-      }, 1000*0.8);
-    }, (i+1)*1000);
-  }
-}
-}
-}
-$("#blue").on("click", function(){
-      sound4.play();
-      if(playerSequence.length < sequence.length){
-      index++;
-      playerSequence.push(1);
-      checkSequence();
-      console.log(playerSequence);
-      }
-      $("#blue").css("background-color", "rgba(0, 0, 255, 1)");
-      setTimeout(function() {
-        $("#blue").css("background-color", "rgba(0, 0, 255, 0.5)");
-      }, 407);
-});
-$("#green").on("click", function(){
-      sound1.play();
-      if(playerSequence.length < sequence.length){
-      index++;
-      playerSequence.push(2);
-      checkSequence();
-      }
-      $("#green").css("background-color", "rgba(0, 128, 0, 1)");
-      setTimeout(function() {
-        $("#green").css("background-color", "rgba(0, 128, 0, 0.5)");
-      }, 407);
-});
-
-$("#yellow").on("click", function(){
-      sound3.play();
-      if(playerSequence.length < sequence.length){
-      index++;
-      playerSequence.push(3);
-      checkSequence();
-      }
-      $("#yellow").css("background-color", "rgba(255, 255, 0, 1)");
-      setTimeout(function() {
-        $("#yellow").css("background-color", "rgba(255, 255, 0, 0.5)");
-      }, 407);
-});
-
-$("#red").on("click", function(){
-      sound2.play();
-      if(playerSequence.length < sequence.length){
-      index++;
-      playerSequence.push(4);
-      checkSequence();
-      }
-      $("#red").css("background-color", "rgba(255, 0, 0, 1)");
-      setTimeout(function() {
-        $("#red").css("background-color", "rgba(255, 0, 0, 0.5)");
-      }, 407);
-});
-var index = -1;
-function checkSequence(){
-  if(playerSequence[index] == sequence[index]){
-    if(playerSequence.length == sequence.length){
-    playerSequence = [];
-    index = -1;
-    nextLight();
+    //};
+    jQuery.fn.center = function () {
+      this.css("position", "absolute");
+      this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) +
+        $(window).scrollTop()) + "px");
+      this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) +
+        $(window).scrollLeft()) + "px");
+      return this;
     }
-  }else{
-  if(playerSequence[index] != sequence[index]){
-    console.log("your shit");
-    index = -1;
-    playerSequence = [];
-    currentLight();
-  }
-  }
-}
+    //window.onresize = function(event) {
+    //$("#centerCircle").center();
+    //};
+    //$("#centerCircle").center();
+    var sequence = [];
+    var bad = false;
+    var playerSequence = [];
+    var score = 0;
+    var started = false;
+    var strict = false;
+    var sound1 = new Audio("./simonSound1.mp3");
+    var sound2 = new Audio("./simonSound2.mp3");
+    var sound3 = new Audio("./simonSound3.mp3");
+    var sound4 = new Audio("./simonSound4.mp3");
+
+    $("#start").on("click", function () {
+      $("#count").html(score);
+      if (started == false) {
+        $("#start").css("background-color", "red");
+        started = true;
+        nextLight();
+      } else if (started == true) {
+        location.reload();
+      }
+    });
+
+    $("#strict").on("click", function () {
+      if (strict == false) {
+        strict = true
+        $("#strict").css("background-color", "red");
+      } else {
+        strict = false;
+        $("#strict").css("background-color", "rgb(66,139,202)");
+      }
+    });
+
+    function currentLight() {
+      console.log(sequence);
+      bad = false;
+      for (let i = 0; i < sequence.length; i++) {
+        if (sequence[i] == 1) {
+          setTimeout(function () {
+            sound4.play();
+            $("#blue").css("background-color", "rgba(0, 0, 255, 1)");
+            setTimeout(function () {
+              $("#blue").css("background-color", "rgba(0, 0, 255, 0.5)");
+            }, 1000 * 0.8);
+          }, (i + 1) * 1000);
+        }
+        if (sequence[i] == 2) {
+          setTimeout(function () {
+            sound1.play();
+            $("#green").css("background-color", "rgba(0, 128, 0, 1)");
+            setTimeout(function () {
+              $("#green").css("background-color", "rgba(0, 128, 0, 0.5)");
+            }, 1000 * 0.8);
+          }, (i + 1) * 1000);
+        }
+        if (sequence[i] == 3) {
+          setTimeout(function () {
+            sound3.play();
+            $("#yellow").css("background-color", "rgba(255, 255, 0, 1)");
+            setTimeout(function () {
+              $("#yellow").css("background-color", "rgba(255, 255, 0, 0.5)");
+            }, 1000 * 0.8);
+          }, (i + 1) * 1000);
+        }
+        if (sequence[i] == 4) {
+          setTimeout(function () {
+            sound2.play();
+            $("#red").css("background-color", "rgba(255, 0, 0, 1)");
+            setTimeout(function () {
+              $("#red").css("background-color", "rgba(255, 0, 0, 0.5)");
+            }, 1000 * 0.8);
+          }, (i + 1) * 1000);
+        }
+      }
+    }
+    function nextLight() {
+      sequence.push(Math.floor(Math.random() * (4 - 1 + 1)) + 1);
+      if(sequence >= 21){
+        $("#count").html("You<br>Win!");
+        $("#count").css("font-size", "2.1vw");
+        $("#blue").css("background-color", "rgba(0, 0, 255, 1)");
+        $("#green").css("background-color", "rgba(0, 128, 0, 1)");
+        $("#yellow").css("background-color", "rgba(255, 255, 0, 1)");
+        $("#red").css("background-color", "rgba(255, 0, 0, 1)");
+      }
+      if (sequence.length < 21) {
+        bad = false;
+        console.log(sequence);
+        score++;
+        for (let i = 0; i < sequence.length; i++) {
+          $("#count").html(score);
+          if (sequence[i] == 1 && bad == false) {
+            setTimeout(function () {
+              sound4.play();
+              $("#blue").css("background-color", "rgba(0, 0, 255, 1)");
+              setTimeout(function () {
+                $("#blue").css("background-color", "rgba(0, 0, 255, 0.5)");
+              }, 1000 * 0.8);
+            }, (i + 1) * 1000);
+          }else if (sequence[i] == 2 && bad == false) {
+            $("#count").html(score);
+            setTimeout(function () {
+              sound1.play();
+              $("#green").css("background-color", "rgba(0, 128, 0, 1)");
+              setTimeout(function () {
+                $("#green").css("background-color", "rgba(0, 128, 0, 0.5)");
+              }, 1000 * 0.8);
+            }, (i + 1) * 1000);
+          }else if (sequence[i] == 3 && bad == false) {
+            $("#count").html(score);
+            setTimeout(function () {
+              sound3.play();
+              $("#yellow").css("background-color", "rgba(255, 255, 0, 1)");
+              setTimeout(function () {
+                $("#yellow").css("background-color", "rgba(255, 255, 0, 0.5)");
+              }, 1000 * 0.8);
+            }, (i + 1) * 1000);
+          }else if (sequence[i] == 4 && bad == false) {
+            $("#count").html(score);
+            setTimeout(function () {
+              sound2.play();
+              $("#red").css("background-color", "rgba(255, 0, 0, 1)");
+              setTimeout(function () {
+                $("#red").css("background-color", "rgba(255, 0, 0, 0.5)");
+              }, 1000 * 0.8);
+            }, (i + 1) * 1000);
+          }else{
+            break;
+          }
+        }
+      }
+    }
+    $("#blue").on("click", function () {
+      sound4.play();
+      if (playerSequence.length < sequence.length) {
+        index++;
+        playerSequence.push(1);
+        checkSequence();
+        console.log(playerSequence);
+      }
+      $("#blue").css("background-color", "rgba(0, 0, 255, 1)");
+      setTimeout(function () {
+        $("#blue").css("background-color", "rgba(0, 0, 255, 0.5)");
+      }, 407);
+    });
+    $("#green").on("click", function () {
+      sound1.play();
+      if (playerSequence.length < sequence.length) {
+        index++;
+        playerSequence.push(2);
+        checkSequence();
+      }
+      $("#green").css("background-color", "rgba(0, 128, 0, 1)");
+      setTimeout(function () {
+        $("#green").css("background-color", "rgba(0, 128, 0, 0.5)");
+      }, 407);
+    });
+
+    $("#yellow").on("click", function () {
+      sound3.play();
+      if (playerSequence.length < sequence.length) {
+        index++;
+        playerSequence.push(3);
+        checkSequence();
+      }
+      $("#yellow").css("background-color", "rgba(255, 255, 0, 1)");
+      setTimeout(function () {
+        $("#yellow").css("background-color", "rgba(255, 255, 0, 0.5)");
+      }, 407);
+    });
+
+    $("#red").on("click", function () {
+      sound2.play();
+      if (playerSequence.length < sequence.length) {
+        index++;
+        playerSequence.push(4);
+        checkSequence();
+      }
+      $("#red").css("background-color", "rgba(255, 0, 0, 1)");
+      setTimeout(function () {
+        $("#red").css("background-color", "rgba(255, 0, 0, 0.5)");
+      }, 407);
+    });
+    var index = -1;
+    function checkSequence() {
+      if (playerSequence[index] == sequence[index]) {
+        if (playerSequence.length == sequence.length) {
+          playerSequence = [];
+          index = -1;
+          nextLight();
+        }
+      } else {
+        if (strict == true && playerSequence[index] != sequence[index]) {
+          setTimeout(function () {
+            $("#count").html("X");
+            bad = true;
+            setTimeout(function () {
+              $("#count").html(score);
+            }, 800);
+          }, 1000);
+          console.log("your shiter");
+          index = -1;
+          playerSequence = [];
+          score = 0;
+          sequence = [];
+          $("#count").html(score);
+          nextLight();
+        } else if (playerSequence[index] != sequence[index]) {
+          setTimeout(function () {
+            $("#count").html("X");
+            bad = true;
+            setTimeout(function () {
+              $("#count").html(score);
+            }, 800);
+          }, 1000);
+          console.log("your shit");
+          index = -1;
+          playerSequence = [];
+          currentLight();
+        }
+      }
+    }
 //sequence.push(Math.floor(Math.random() * (4 - 1 + 1)) + 1);
 //for(let i = 0; i < sequence.length; i++){
 //nextLight();
@@ -497,6 +562,8 @@ function checkSequence(){
 //            $("#green").attr('class', 'green-off');
 //          }, 1000*0.8);
 //        },(i+1)*1000);
-</script>
+
+  </script>
 </body>
+
 </html>
