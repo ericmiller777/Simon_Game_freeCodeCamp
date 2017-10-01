@@ -607,10 +607,10 @@ Start/Reset<br>
 //          }, 1000*0.8);
 //        },(i+1)*1000);
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-  sound1.volume = 0;
-  sound2.volume = 0;
-  sound3.volume = 0;
-  sound4.volume = 0;
+  sound1.volume = 0.1;
+  sound2.volume = 0.1;
+  sound3.volume = 0.1;
+  sound4.volume = 0.1;
   $("#start").on("click", function() {
   sound1.play();
   sound2.play();
