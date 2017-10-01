@@ -348,14 +348,6 @@ Start/Reset<br>
     var sound4 = new Audio("./simonSound4.mp3"); 
     $("#start").on("click", function () {
       $("#count").html(score);
-      sound1.volume = 0;
-      sound2.volume = 0;
-      sound3.volume = 0;
-      sound4.volume = 0;
-      sound1.play();
-      sound2.play();
-      sound3.play();
-      sound4.play();
       if (started == false) {
         $("#start").css("background-color", "red");
         started = true;
@@ -432,10 +424,6 @@ Start/Reset<br>
 
     function nextLight() {
       noClick = true;
-      sound1.volume = 1;
-      sound2.volume = 2;
-      sound3.volume = 3;
-      sound4.volume = 4;
       sequence.push(Math.floor(Math.random() * (4 - 1 + 1)) + 1);
       if (sequence >= 21) {
         $("#count").html("You<br>Win!");
@@ -614,6 +602,9 @@ Start/Reset<br>
 //            $("#green").attr('class', 'green-off');
 //          }, 1000*0.8);
 //        },(i+1)*1000);
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+  $("<h2>Click all four colored buttons once before starting to corrct mobile audio limitations</h2>").insertAfter("#bigCircle");
+}
   </script>
 </body>
 
