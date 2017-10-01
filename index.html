@@ -347,10 +347,6 @@ Start/Reset<br>
     var sound3 = new Audio("./simonSound3.mp3");
     var sound4 = new Audio("./simonSound4.mp3");
     $("#start").on("click", function() {
-      sound1.load();
-      sound2.load();
-      sound3.load();
-      sound4.load();
       sound1.volume = 0.00000001;
       sound2.volume = 0.00000001;
       sound3.volume = 0.00000001;
@@ -609,7 +605,7 @@ Start/Reset<br>
       sound2.volume = 1;
       sound3.volume = 1;
       sound4.volume = 1;
-    }, 1000);
+    }, 1077);
     }
 //sequence.push(Math.floor(Math.random() * (4 - 1 + 1)) + 1);
 //for(let i = 0; i < sequence.length; i++){
