@@ -318,6 +318,7 @@ Start/Reset<br>
     </div>
   </div>
   <script>
+    webview.getSettings().setMediaPlaybackRequiresUserGesture(fa‌​lse);
     console.log($(window).width());
     console.log($(window).width());
     //if(window.innerHeight > window.innerWidth){
@@ -345,10 +346,17 @@ Start/Reset<br>
     var sound1 = new Audio("./simonSound1.mp3");
     var sound2 = new Audio("./simonSound2.mp3");
     var sound3 = new Audio("./simonSound3.mp3");
-    var sound4 = new Audio("./simonSound4.mp3");
-
+    var sound4 = new Audio("./simonSound4.mp3"); 
     $("#start").on("click", function () {
       $("#count").html(score);
+      sound1.volume = 0;
+      sound2.volume = 0;
+      sound3.volume = 0;
+      sound4.volume = 0;
+      sound1.play();
+      sound2.play();
+      sound3.play();
+      sound4.play();
       if (started == false) {
         $("#start").css("background-color", "red");
         started = true;
@@ -425,6 +433,10 @@ Start/Reset<br>
 
     function nextLight() {
       noClick = true;
+      sound1.volume = 1;
+      sound2.volume = 2;
+      sound3.volume = 3;
+      sound4.volume = 4;
       sequence.push(Math.floor(Math.random() * (4 - 1 + 1)) + 1);
       if (sequence >= 21) {
         $("#count").html("You<br>Win!");
