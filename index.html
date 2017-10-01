@@ -132,12 +132,20 @@
     text-align: center;
   }
 
-  @media screen and (-webkit-min-device-pixel-ratio:0) and (min-width: 1147px){
-    #strictButton{
+  #start {
+    outline: none;
+  }
+
+  #strict {
+    outline: none;
+  }
+
+  @media screen and (-webkit-min-device-pixel-ratio:0) and (min-width: 1147px) {
+    #strictButton {
       margin-left: 34.17%;
     }
   }
-  
+
 
   @media only screen and (min-width: 419px) and (max-width: 628px) {
     body {
@@ -346,7 +354,7 @@ Start/Reset<br>
     var sound2 = new Audio("./simonSound2.mp3");
     var sound3 = new Audio("./simonSound3.mp3");
     var sound4 = new Audio("./simonSound4.mp3");
-    $("#start").on("click", function() {
+    $("#start").on("click", function () {
       sound1.volume = 0.00000001;
       sound2.volume = 0.00000001;
       sound3.volume = 0.00000001;
@@ -355,7 +363,7 @@ Start/Reset<br>
       sound2.play();
       sound3.play();
       sound4.play();
-      $("#count").html(score); 
+      $("#count").html(score);
       if (started == false) {
         $("#start").css("background-color", "red");
         started = true;
@@ -599,13 +607,13 @@ Start/Reset<br>
         }
       }
     }
-    function setVolume(){
+    function setVolume() {
       setTimeout(function () {
-      sound1.volume = 1;
-      sound2.volume = 1;
-      sound3.volume = 1;
-      sound4.volume = 1;
-    }, 1000);
+        sound1.volume = 1;
+        sound2.volume = 1;
+        sound3.volume = 1;
+        sound4.volume = 1;
+      }, 1000);
     }
 //sequence.push(Math.floor(Math.random() * (4 - 1 + 1)) + 1);
 //for(let i = 0; i < sequence.length; i++){
